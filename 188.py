@@ -20,7 +20,7 @@ class Solution(object):
         for i in range(1, k+1):
             localMax=dp[i-1][0]-prices[0]
             for j in range(1, n): 
-                dp[i][j]=max(dp[i][j-1], prices[j]+localMax)
+                dp[i][j]=max(dp[i][j-1], prices[j]+localMax)   
                 localMax=max(localMax, dp[i-1][j]-prices[j])
 
         return dp[k][n-1]
